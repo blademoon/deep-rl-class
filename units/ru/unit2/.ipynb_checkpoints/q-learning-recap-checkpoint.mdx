@@ -1,0 +1,24 @@
+# Обзор Q-обучения [[q-learning-recap]]
+
+
+*Q-Обучение* **это алгоритм RL, который** :
+
+- Обучает *Q-функцию*, **функцию ценности действия**, закодированную во внутренней памяти *Q-таблицей*, **содержащей все значения пар "состояние - действие ".**
+
+- Если заданы состояние и действие, то наша Q-функция **будет искать в своей Q-таблице соответствующее значение**.
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/Q-function-2.jpg" alt="Q функция"  width="100%"/>
+
+- Когда обучение завершено, **у нас есть оптимальная Q-функция, или, что эквивалентно, оптимальная Q-таблица.**
+
+- И если у нас **есть оптимальная Q-функция**, то у нас есть и оптимальная политика, поскольку мы **знаем для каждого состояния, какое действие лучше предпринять.**
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/link-value-policy.jpg" alt="Связь между ценностью и политикой"  width="100%"/>
+
+Но вначале наша **Q-таблица бесполезна, поскольку дает произвольные значения для каждой пары "состояние-действие" (чаще всего мы инициализируем Q-таблицу значениями 0)**. Но по мере исследования среды и обновления Q-таблицы она будет давать все более и более точное приближение.
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/notebooks/unit2/q-learning.jpeg" alt="q-learning.jpeg" width="100%"/>
+
+Это псевдокод Q-Обучения:
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/Q-learning-2.jpg" alt="Q-Обучение" width="100%"/>

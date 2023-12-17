@@ -1,0 +1,93 @@
+# Два типа методов, основанных на ценности [[two-types-value-based-methods]]
+
+В методах, основанных на ценности, **мы изучаем функцию ценности**, которая **сопоставляет состояние с ожидаемой ценностью пребывания в этом состоянии**.
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/vbm-1.jpg" alt="Value Based Methods"/>
+
+Ценность состояния - это **ожидаемый дисконтированный доход**, который может получить агент, если он **начнет действовать в этом состоянии, а затем будет действовать в соответствии с нашей политикой*.
+
+<Tip>
+Но что значит действовать в соответствии с нашей политикой? Ведь в ценностно-ориентированных методах у нас нет политики, поскольку мы обучаем не политику, а функцию ценности.
+</Tip>
+
+Напомним, что целью **RL агента является оптимальная политика π\*.**.
+
+Для поиска оптимальной политики мы познакомились с двумя различными методами:
+
+- *Методы, основанные на политике:* **Непосредственное обучение политики** для выбора действий в зависимости от состояния (или распределения вероятностей действий в этом состоянии). В этом случае у нас **нет функции ценности*.
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/two-approaches-2.jpg" alt="Two RL approaches"/>
+
+Политика принимает на вход состояние и выдает, какое действие следует предпринять в этом состоянии (детерминированная политика: политика, которая выдает одно действие при заданном состоянии, в отличие от стохастической политики, которая выдает распределение вероятностей по действиям).
+
+И, следовательно, **мы не определяем вручную поведение нашей политики, ее определяет обучение.**
+
+- *Методы, основанные на ценности:* **Косвенно, путем обучения функции ценности**, которая выдает значение состояния или пары "состояние-действие". Учитывая эту функцию ценности, наша политика **предпримет то или иное действие.**
+
+Так как политика не обучается, **нам необходимо задать ее поведение.** Например, если мы хотим получить политику, которая, учитывая функцию ценности, будет предпринимать действия, всегда приводящие к наибольшему вознаграждению, **мы создадим Жадную Политику (Greedy Policy).**
+
+<figure>
+  <img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/two-approaches-3.jpg" alt="Two RL approaches"/>
+  <figcaption>При заданном состоянии наша функция "действие-значение" (которую мы обучаем) выводит значение каждого действия в этом состоянии. Затем наша предопределенная жадная политика выбирает действие, которое даст наибольшее значение для данного состояния или пары "состояние - действие".</figcaption>
+</figure>
+
+Следовательно, какой бы метод вы ни использовали для решения своей задачи, **у вас будет политика**. В случае методов, основанных на ценности, вы не обучаете политику: ваша политика **это простая заранее заданная функция** (например, Greedy Policy), которая использует значения, заданные функцией ценности, для выбора своих действий.
+
+Разница заключается в следующем:
+
+- При обучении на основе политики **оптимальная политика (обозначается π\*) находится путем непосредственного обучения этой политике**.
+- При обучении на основе ценности **нахождение оптимальной функции ценности (обозначаемой Q\* или V\*, разницу мы рассмотрим ниже) приводит к получению оптимальной политики.**
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/link-value-policy.jpg" alt="Link between value and policy"/>
+
+На самом деле, в большинстве случаев в методах, основанных на ценности, используется **Эпсилон-Жадная политика (Epsilon-Greedy Policy)**, которая позволяет найти компромисс между разведкой и эксплуатацией; мы поговорим об этом, когда будем обсуждать Q-Обучение во второй части этого блока.
+
+Как мы уже говорили выше, у нас есть два типа функций, основанных на ценности:
+
+## Функция ценности состояния [[state-value-function]]
+
+Функцию ценности состояния при политике π запишем следующим образом:
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/state-value-function-1.jpg" alt="State value function"/>
+
+Для каждого состояния функция ценности состояния определяет ожидаемую доходность, если агент **начнет действовать в этом состоянии** и затем будет следовать этой политике всегда (если хотите, на всех будущих временных интервалах).
+
+
+<figure>
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/state-value-function-2.jpg" alt="State value function"/>
+  <figcaption>If we take the state with value -7: it's the expected return starting at that state and taking actions according to our policy (greedy policy), so right, right, right, down, down, right, right.</figcaption>
+</figure>
+
+## Функция ценности действия [[action-value-function]]
+
+In the action-value function, for each state and action pair, the action-value function **outputs the expected return** if the agent starts in that state, takes that action, and then follows the policy forever after.
+В функции ценности действия для каждой пары состояний и действий функция ценности действия **отображает ожидаемый доход**, если агент начнет действовать в этом состоянии, предпримет это действие и затем будет следовать этой политике всегда.
+
+
+Ценность действия \\\(a\\\) в состоянии \\\(s\\\) при политике \\\(π\\\) это:
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/action-state-value-function-1.jpg" alt="Action State value function"/>
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/action-state-value-function-2.jpg" alt="Action State value function"/>
+
+
+We see that the difference is:
+
+- For the state-value function, we calculate **the value of a state \\(S_t\\)**
+- For the action-value function, we calculate **the value of the state-action pair ( \\(S_t, A_t\\) ) hence the value of taking that action at that state.**
+
+Мы видим, что разница есть:
+
+- Для функции ценности состояния мы вычисляем **ценность состояния \\\(S_t\\\)**.
+- Для функции ценности действия мы вычисляем **ценность пары "состояние-действие" ( \\\(S_t, A_t\\\) ), следовательно, ценность выполнения этого действия в данном состоянии**.
+
+<figure>
+  <img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/two-types.jpg" alt="Two types of value function"/>
+  <figcaption>
+Note: We didn't fill all the state-action pairs for the example of Action-value function</figcaption>
+</figure>
+
+В любом случае, какую бы функцию ценности мы ни выбрали (функцию ценности состояния или ценности действия), **возвращаемая ценность - это ожидаемая ценность**.
+
+Однако проблема заключается в том, что **для расчета КАЖДОГО значения ценности состояния или пары "состояние-действие" необходимо просуммировать все вознаграждения, которые может получить агент, если он стартует из этого состояния**.
+
+Это может быть вычислительно дорогостоящим процессом, и вот тут-то **на помощь нам приходит уравнение Беллмана.**

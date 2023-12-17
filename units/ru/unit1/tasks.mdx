@@ -1,0 +1,27 @@
+# Тип задач [[tasks]]
+
+Задача - это **экземпляр** задачи обучения с подкреплением. У нас может быть два типа задач: **эпизодические** и **постоянные**.
+
+## Эпизодические задачи [[episodic-task]]
+
+В данном случае у нас есть начальная точка и конечная точка **(конечное состояние). Таким образом, создается эпизод**: список состояний, действий, наград и новых состояний.
+
+Например, вспомните Super Mario Bros: эпизод начинается с момента запуска нового уровня Марио и заканчивается **когда вас убивают или вы дошли до конца уровня.**
+
+<figure>
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/mario.jpg" alt="Mario">
+<figcaption>Beginning of a new episode.
+</figcaption>
+</figure>
+
+
+## Непрерывные задачи [[continuing-tasks]]
+
+Это задачи, которые продолжаются вечно (**нет терминального состояния**). В этом случае агент должен **научиться выбирать оптимальные действия и одновременно взаимодействовать со средой.**
+
+Например, агент, осуществляющий автоматическую торговлю акциями.  Для этой задачи не существует начальной точки и конечного состояния. **Агент продолжает работать до тех пор, пока мы не решим его остановить.**
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/stock.jpg" alt="Stock Market" width="100%">
+
+Напомним:
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/tasks.jpg" alt="Tasks recap" width="100%">

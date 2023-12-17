@@ -1,0 +1,234 @@
+- title: Раздел 0. Добро пожаловать на курс
+  sections:
+  - local: unit0/introduction
+    title: Добро пожаловать на курс 🤗.
+  - local: unit0/setup
+    title: Setup
+  - local: unit0/discord101
+    title: Discord 101
+- title: Блок 1. Введение в глубокое обучение с подкреплением
+  sections:
+  - local: unit1/introduction
+    title: Введение #+ units/ru/unit1/introduction.mdx
+  - local: unit1/what-is-rl
+    title: Что такое обучение с подкреплением? #+ units/ru/unit1/what-is-rl.mdx
+  - local: unit1/rl-framework 
+    title: Концепция обучения с подкреплением  #+ units/ru/unit1/rl-framework.mdx
+  - local: unit1/tasks
+    title: Тип задач  #+ units/ru/unit1/tasks.mdx
+  - local: unit1/exp-exp-tradeoff
+    title: Компромисс между исследованием и использованием #+ units/ru/unit1/exp-exp-tradeoff.mdx
+  - local: unit1/two-methods
+    title: Два основных подхода к решению задач RL #+ units/ru/unit1/two-methods.mdx
+  - local: unit1/deep-rl
+    title: “Глубина” в глубоком обучении с подкреплением #+ units/ru/unit1/deep-rl.mdx
+  - local: unit1/summary
+    title: Краткое содержание #+ units/ru/unit1/summary.mdx
+  - local: unit1/glossary #+  units/ru/unit1/glossary.mdx
+    title: Глоссарий
+  - local: unit1/hands-on # <-
+    title: Практическая работа
+  - local: unit1/quiz
+    title: Контрольная работа
+  - local: unit1/conclusion
+    title: Заключение
+  - local: unit1/additional-readings
+    title: Дополнительные материалы
+- title: Бонусный блок 1. Введение в глубокое обучение с подкреплением с помощью Huggy
+  sections:
+  - local: unitbonus1/introduction
+    title: Введение
+  - local: unitbonus1/how-huggy-works
+    title: Как работает Huggy?
+  - local: unitbonus1/train
+    title: Обучение Huggy
+  - local: unitbonus1/play
+    title: Игра с Хагги
+  - local: unitbonus1/conclusion
+    title: Заключение
+- title: Прямой эфир 1. Работа курса, вопросы и ответы, игра с Хагги
+  sections:
+  - local: live1/live1
+    title: Прямой эфир 1. Работа курса, вопросы и ответы, игра с Хагги 🐶
+- title: Блок 2. Введение в Q-Обучение
+  sections:
+  - local: unit2/introduction
+    title: Введение
+  - local: unit2/what-is-rl
+    title: Что такое RL? Краткий обзор
+  - local: unit2/two-types-value-based-methods
+    title: Два типа методов, основанных на ценности
+  - local: unit2/bellman-equation
+    title: Уравнение Беллмана: упрощение оценки ценности
+  - local: unit2/mc-vs-td
+    title: Монте-Карло против Обучения с учётом временных различий
+  - local: unit2/mid-way-recap
+    title: Промежуточный итог
+  - local: unit2/mid-way-quiz
+    title: Промежуточный тест
+  - local: unit2/q-learning
+    title: Введение в Q-Обучение
+  - local: unit2/q-learning-example
+    title: Пример Q-Обучения
+  - local: unit2/q-learning-recap
+    title: Обзор Q-обучения
+  - local: unit2/glossary
+    title: Глоссарий
+  - local: unit2/hands-on
+    title: Практическая работа
+  - local: unit2/quiz2
+    title: Контрольная работа по Q-Обучению
+  - local: unit2/conclusion
+    title: Заключение
+  - local: unit2/additional-readings
+    title: Дополнительные материалы
+- title: Блок 3. Глубокое Q-Обучение с играми Atari
+  sections:
+  - local: unit3/introduction
+    title: Введение
+  - local: unit3/from-q-to-dqn
+    title: От Q-Обучения к Глубокому Q-Обучению
+  - local: unit3/deep-q-network
+    title: Глубокая Q-сеть (DQN)
+  - local: unit3/deep-q-algorithm
+    title: Глубокий Q алгоритм
+  - local: unit3/glossary
+    title: Глоссарий
+  - local: unit3/hands-on
+    title: Практическая работа
+  - local: unit3/quiz
+    title: Quiz
+  - local: unit3/conclusion
+    title: Conclusion
+  - local: unit3/additional-readings
+    title: Дополнительные материалы
+# - title: Бонусный блок 2. Automatic Hyperparameter Tuning with Optuna
+#   sections:
+#   - local: unitbonus2/introduction
+#     title: Введение
+#   - local: unitbonus2/optuna
+#     title: Optuna
+#   - local: unitbonus2/hands-on
+#     title: Практическая работа
+# - title: Блок 4. Policy Gradient with PyTorch
+#   sections:
+#   - local: unit4/introduction
+#     title: Введение
+#   - local: unit4/what-are-policy-based-methods
+#     title: What are the policy-based methods?
+#   - local: unit4/advantages-disadvantages
+#     title: The advantages and disadvantages of policy-gradient methods
+#   - local: unit4/policy-gradient
+#     title: Diving deeper into policy-gradient
+#   - local: unit4/pg-theorem
+#     title: (Optional) the Policy Gradient Theorem
+#   - local: unit4/glossary
+#     title: Глоссарий
+#   - local: unit4/hands-on
+#     title: Практическая работа
+#   - local: unit4/quiz
+#     title: Quiz
+#   - local: unit4/conclusion
+#     title: Conclusion
+#   - local: unit4/additional-readings
+#     title: Дополнительные материалы
+# - title: Блок 5. Introduction to Unity ML-Agents
+#   sections:
+#   - local: unit5/introduction
+#     title: Введение
+#   - local: unit5/how-mlagents-works
+#     title: How ML-Agents works?
+#   - local: unit5/snowball-target
+#     title: The SnowballTarget environment
+#   - local: unit5/pyramids
+#     title: The Pyramids environment
+#   - local: unit5/curiosity
+#     title: (Optional) What is curiosity in Deep Reinforcement Learning?
+#   - local: unit5/hands-on
+#     title: Практическая работа
+#   - local: unit5/bonus
+#     title: Bonus. Learn to create your own environments with Unity and MLAgents
+#   - local: unit5/conclusion
+#     title: Conclusion
+# - title: Блок 6. Actor Critic methods with Robotics environments
+#   sections:
+#   - local: unit6/introduction
+#     title: Введение
+#   - local: unit6/variance-problem
+#     title: The Problem of Variance in Reinforce
+#   - local: unit6/advantage-actor-critic
+#     title: Advantage Actor Critic (A2C)
+#   - local: unit6/hands-on
+#     title: Практическая работа: Advantage Actor Critic (A2C) using Robotics Simulations with Panda-Gym 🤖
+#   - local: unit6/conclusion
+#     title: Conclusion
+#   - local: unit6/additional-readings
+#     title: Дополнительные материалы
+# - title: Блок 7. Introduction to Multi-Agents and AI vs AI
+#   sections:
+#   - local: unit7/introduction
+#     title: Введение
+#   - local: unit7/introduction-to-marl
+#     title: An introduction to Multi-Agents Reinforcement Learning (MARL)
+#   - local: unit7/multi-agent-setting
+#     title: Designing Multi-Agents systems
+#   - local: unit7/self-play
+#     title: Self-Play
+#   - local: unit7/hands-on
+#     title: Практическая работа: Let's train our soccer team to beat your classmates' teams (AI vs. AI)
+#   - local: unit7/conclusion
+#     title: Conclusion
+#   - local: unit7/additional-readings
+#     title: Дополнительные материалы
+# - title: Блок 8. Part 1 Proximal Policy Optimization (PPO)
+#   sections:
+#   - local: unit8/introduction
+#     title: Введение
+#   - local: unit8/intuition-behind-ppo
+#     title: The intuition behind PPO
+#   - local: unit8/clipped-surrogate-objective
+#     title: Introducing the Clipped Surrogate Objective Function
+#   - local: unit8/visualize
+#     title: Visualize the Clipped Surrogate Objective Function
+#   - local: unit8/hands-on-cleanrl
+#     title: Практическая работа: PPO with CleanRL
+#   - local: unit8/conclusion
+#     title: Conclusion
+#   - local: unit8/additional-readings
+#     title: Дополнительные материалы
+# - title: Блок 8. Part 2 Proximal Policy Optimization (PPO) with Doom
+#   sections:
+#   - local: unit8/introduction-sf
+#     title: Введение
+#   - local: unit8/hands-on-sf
+#     title: Практическая работа: PPO with Sample Factory and Doom
+#   - local: unit8/conclusion-sf
+#     title: Conclusion
+# - title: Бонусный блок 3. Advanced Topics in Reinforcement Learning
+#   sections:
+#   - local: unitbonus3/introduction
+#     title: Введение
+#   - local: unitbonus3/model-based
+#     title: Model-Based Reinforcement Learning
+#   - local: unitbonus3/offline-online
+#     title: Offline vs. Online Reinforcement Learning
+#   - local: unitbonus3/rlhf
+#     title: Reinforcement Learning from Human Feedback
+#   - local: unitbonus3/decision-transformers
+#     title: Decision Transformers and Offline RL
+#   - local: unitbonus3/language-models
+#     title: Language models in RL
+#   - local: unitbonus3/curriculum-learning
+#     title: (Automatic) Curriculum Learning for RL
+#   - local: unitbonus3/envs-to-try
+#     title: Interesting environments to try
+#   - local: unitbonus3/godotrl
+#     title: An Introduction to Godot RL
+#   - local: unitbonus3/rl-documentation
+#     title: Brief introduction to RL documentation
+# - title: Сертификация и поздравления
+#   sections:
+#   - local: communication/conclusion
+#     title: Поздравляем
+#   - local: communication/certification
+#     title: Получение сертификата о прохождении обучения

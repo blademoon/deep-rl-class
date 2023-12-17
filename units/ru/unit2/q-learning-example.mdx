@@ -1,0 +1,83 @@
+# Пример Q-Обучения [[q-learning-example]]
+
+Чтобы лучше понять Q-Обучение, рассмотрим простой пример:
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/Maze-Example-2.jpg" alt="Пример c лабиринтом"/>
+
+- Вы - мышь в этом крошечном лабиринте. Вы всегда **начинаете с одной и той же начальной точки.**
+- Цель - **съесть большую кучу сыра в правом нижнем углу** и избежать яда. В конце концов, кто не любит сыр?
+- Эпизод заканчивается, если мы съедим яд, **съедим большую кучу сыра** или сделаем более пяти шагов.
+- Скорость обучения равна 0.1
+- Ставка дисконтирования (гамма) равна 0.99
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/q-ex-1.jpg" alt="Пример c лабиринтом"/>
+
+
+Функция вознаграждения выглядит следующим образом:
+
+- **+0:** Переход в состояние, в котором нет сыра.
+- **+1:** Переход в состояние, в котором есть маленький сыр.
+- **+10:** Переход в состояние с большой кучей сыра.
+- **-10:** Переход в состояние с ядом и смерть.
+- **+0** Если мы сделаем более пяти шагов.
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/q-ex-2.jpg" alt="Пример c лабиринтом"/>
+
+Для обучения нашего агента оптимальной политике (то есть политике, которая идет вправо, вправо, вниз) **мы будем использовать алгоритм Q-Обучение**.
+
+## Шаг 1: Инициализация Q-таблицы [[step1]]
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/Example-1.jpg" alt="Пример c лабиринтом"/>
+
+Таким образом, пока **наша Q-таблица бесполезна**, необходимо **обучить нашу Q-функцию с помощью алгоритма Q-Обучения.**
+
+Сделаем это для 2 учебных временных шагов:
+
+Временной шаг обучения 1:
+
+## Шаг 2: Выбор действия с помощью эпсилон-жадной стратегии [[step2]]
+
+Поскольку эпсилон велик (= 1,0), я предпринимаю случайное действие. В данном случае я иду направо.
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/q-ex-3.jpg" alt="Пример c лабиринтом"/>
+
+
+## Шаг 3: Выполнить действие At, получить Rt+1 и St+1 [[step3]]
+
+Пойдя направо, я получаю небольшой сыр, так что \\\(R_{t+1} = 1\\\) и я нахожусь в новом состоянии.
+
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/q-ex-4.jpg" alt="Пример c лабиринтом"/>
+
+
+## Шаг 4: Обновление Q(St, At) [[step4]]
+
+Теперь мы можем обновить \\(Q(S_t, A_t)\\), используя нашу формулу.
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/q-ex-5.jpg" alt="Пример c лабиринтом"/>
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/Example-4.jpg" alt="Пример c лабиринтом"/>
+
+Временной шаг обучения 2:
+
+## Шаг 2: Выбор действия с помощью эпсилон-жадной стратегии [[step2-2]]
+
+**Я снова предпринимаю случайное действие, так как epsilon=0.99 велико**. (Обратите внимание, что мы немного уменьшаем epsilon, так как по мере обучения мы хотим все меньше и меньше исследовать).
+
+Я предпринял действие "вниз". **Это не очень хорошее действие, так как оно приводит меня к яду.**
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/q-ex-6.jpg" alt="Пример c лабиринтом"/>
+
+
+## Шаг 3: Выполнить действие At, получить Rt+1 и St+1 [[step3-3]]
+
+Поскольку я съел яд, **я получаю \\\(R_{t+1} = -10\\\) и умираю.**
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/q-ex-7.jpg" alt="Пример c лабиринтом"/>
+
+## Шаг 4: Обновление Q(St, At) [[step4-4]]
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/q-ex-8.jpg" alt="Пример c лабиринтом"/>
+
+Поскольку мы умерли, мы начинаем новый эпизод. Но здесь мы видим, что **за два шага исследования мой агент стал умнее.**
+
+По мере дальнейшего исследования и использования среды, а также обновления значений Q с помощью TD-цели, **Q-таблица будет давать все лучшее и лучшее приближение. В конце обучения мы получим оценку оптимальной Q-функции.**

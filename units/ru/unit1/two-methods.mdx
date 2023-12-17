@@ -1,0 +1,90 @@
+# Два основных подхода к решению задач RL [[two-methods]]
+
+<Tip>
+Теперь, когда мы изучили концепцию RL, как нам решить задачу RL?
+</Tip>
+
+Другими словами, как построить RL-агент, который может **выбирать действия, максимизирующие его ожидаемое кумулятивное вознаграждение?**
+
+## Политика π: мозг агента [[policy]]
+
+Политика **π** - это **мозг нашего агента**, это функция, которая говорит нам, какое **действие предпринять, учитывая состояние, в котором мы находимся.** Таким образом, она **определяет поведение агента** в данный момент времени.
+
+<figure>
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/policy_1.jpg" alt="Policy" />
+<figcaption>Думайте о политике как о мозге нашего агента, функции, которая подскажет нам, какое действие следует предпринять, учитывая состояние.</figcaption>
+</figure>
+
+Эта политика **является функцией, которую мы хотим изучить**, наша цель - найти оптимальную политику π\*, политику, которая **максимально увеличивает ожидаемую доходность**, пока агент действует в соответствии с ней. Мы находим эту π\* **в процессе обучения.**
+
+Существует два подхода к обучению агента поиску оптимальной политики π\*:
+
+- **Непосредственно,** обучая агента тому, какое **действие следует предпринять,** учитывая текущее состояние: **Методы, основанные на политике (Policy-Based Methods).**
+- Косвенные методы, **обучающие агента узнавать, какое состояние является более ценным**, и затем предпринимать действия, которые **приводят к более ценным состояниям**: Методы, основанные на ценности действий (Value-Based Methods).
+
+## Методы, основанные на политике [[policy-based]]
+
+В методах, основанных на политике, **мы изучаем непосредственно функцию политики.**
+
+Эта функция будет определять отображение из каждого состояния в наилучшее соответствующее действие. В качестве альтернативы можно определить **распределение вероятностей на множестве возможных действий в данном состоянии.**
+
+<figure>
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/policy_2.jpg" alt="Policy" />
+<figcaption>Как мы видим, политика (детерминированная) <b>прямо указывает</b> на то, какое действие необходимо предпринять для каждого шага.</b></figcaption>
+</figure>
+
+
+У нас есть два типа политик:
+
+
+- *Детерминированная*: политика в данном состоянии **всегда будет возвращать одно и то же действие.**
+
+<figure>
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/policy_3.jpg" alt="Policy"/>
+<figcaption>action = policy(state)</figcaption>
+</figure>
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/policy_4.jpg" alt="Policy" width="100%"/>
+
+- *Стохастическая*: возвращает **распределение вероятностей по действиям.**
+
+<figure>
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/policy_5.jpg" alt="Policy"/>
+<figcaption>policy(actions | state) =  распределение вероятности на множестве действий с учетом текущего состояния</figcaption>
+</figure>
+
+<figure>
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/policy-based.png" alt="Policy Based"/>
+<figcaption>При задании начального состояния наша стохастическая политика выдает распределения вероятностей возможных действий в этом состоянии.</figcaption>
+</figure>
+
+
+Если мы вспомним:
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/pbm_1.jpg" alt="Pbm recap" width="100%" />
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/pbm_2.jpg" alt="Pbm recap" width="100%" />
+
+
+## Методы, основанные на оценке стоимости [[value-based]]
+
+В методах, основанных на ценности, вместо изучения функции политики мы **изучаем функцию ценности**, которая сопоставляет состояние с ожидаемой ценностью **нахождения в этом состоянии.**
+
+Ценность состояния - это **ожидаемая дисконтированная доходность**, которую может получить агент, если он **начнет действовать в этом состоянии, а затем будет действовать в соответствии с нашей политикой.**
+
+"Действовать в соответствии с нашей политикой" означает лишь то, что наша политика - **"идти к состоянию с наибольшей ценностью ".**
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/value_1.jpg" alt="Value based RL" width="100%" />
+
+Здесь мы видим, что наша функция стоимости **определила значения для каждого возможного состояния.**
+
+<figure>
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/value_2.jpg" alt="Value based RL"/>
+<figcaption>Благодаря функции ценности на каждом шаге наша политика будет выбирать для достижения цели состояние с наибольшим значением, определяемым функцией ценности: -7, затем -6, затем -5 (и так далее).</figcaption>
+</figure>
+
+Благодаря функции ценности на каждом шаге наша политика будет выбирать для достижения цели состояние с наибольшим значением, определяемым функцией ценности: -7, затем -6, затем -5 (и так далее).
+
+Если мы вспомним:
+
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/vbm_1.jpg" alt="Vbm recap" width="100%" />
+<img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit1/vbm_2.jpg" alt="Vbm recap" width="100%" />
