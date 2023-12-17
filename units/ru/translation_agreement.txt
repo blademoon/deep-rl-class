@@ -26,59 +26,61 @@
 2. Аргументируйте свою позицию другими источниками.
 
 Глоссарий:
-Unit                                Блок (Не раздел!)
-section(s)                          Раздел
-Deep Reinforcement Learning         глубокое обучение с подкреплением
-Bonus Unit                          Бонусный блок
-Summary                             Краткое содержание (раздела или главы)
-Hands-on                            Практическая работа
-Quiz                                Контрольная работа
+Unit					Блок (Не раздел!)
+section(s)				Раздел
+Deep Reinforcement Learning		глубокое обучение с подкреплением
+Bonus Unit				Бонусный блок
+Summary					Краткое содержание (раздела или главы)
+Hands-on				Практическая работа
+Quiz					Контрольная работа
 assignments                         заданий
-Conclusion                          Заключение
-Additional Readings                 Дополнительные материалы
-Temporal Difference Learning        Метод временных различий
-push and load models                отправки и загрузки моделей
-Huggy                               Хагги
-environment                         среда
-Markov property                     Марковское свойство
-Action Space                        Пространство действий.
-cumulative reward                   Кумулятивное вознаграждение
-immediate reward                    Текущее вознаграждение
-exploration-exploitation trade-off  компромисс между исследованием и использованием
-leaderboard                         таблица результатов
-Prerequisites                       Предварительные условия
-Proximal Policy Optimization        Проксимальная оптимизация политики
-Value-Based Methods                 методы основанные на ценности (действий)
-TODO                                НЕОБХОДИМО СДЕЛАТЬ
-Solution                            Решение
-Evaluate                            Оценка
-agent performance                   качество агента
-additional challenges               дополнительные задачи
-Solution                            Решение
-Joint motors                        суставные двигатели
-tutorials                           обучающие материалы
-Q-Learning                          Q-Обучение
-Temporal Difference Learning*       Обучение с учётом временных различий (обучение с учетом временной разницы, обучение временной разницы)
-Deep Q-Learning                     Глубоким Q-Обучением
-Greedy Policy                       Жадная Политика
-policy-based training               обучение на основе политики
-state-value function                функция ценности состояния
-action-value function               функция ценности действия
-state-action values                 ???
-value                               ценность (значение) стр. 75
-Temporal Difference Learning (TD)   Обучение с учетом временных различий
-return                              доходность (означает суммарное дисконтированное вознаграждение, начиная с текущего временного шага.)
-estimated return                    оцененную доходность
-Mid-way Recap                       Промежуточный итог
-Mid-way Quiz                        Промежуточный тест
-recap                               Обзор
-off-policy                          вне политики
-on-policy                           в соответсвии с политикой
-Off-on policy                       вне политики
-Link value policy                   Связь ценности и политики
-immediate reward                    непосредственное вознаграждение
-Thumbnail                           Миниатюра
-Objectives                          Задачи
+Conclusion				Заключение
+Additional Readings			Дополнительные материалы
+Temporal Difference Learning		Метод временных различий
+push and load models			отправки и загрузки моделей
+Huggy					Хагги
+environment				среда
+Markov property				Марковское свойство
+Action Space				Пространство действий.
+cumulative reward			Кумулятивное вознаграждение
+immediate reward			Текущее вознаграждение
+exploration-exploitation trade-off	компромисс между исследованием и использованием
+leaderboard				таблица результатов
+Prerequisites				Предварительные условия
+Proximal Policy Optimization		Проксимальная оптимизация политики
+Value-Based Methods			методы основанные на ценности (действий)
+TODO					НЕОБХОДИМО СДЕЛАТЬ
+Solution				Решение
+Evaluate				Оценка
+agent performance			качество агента
+additional challenges			дополнительные задачи
+Solution				Решение
+Joint motors				суставные двигатели
+tutorials				обучающие материалы
+Q-Learning				Q-Обучение
+Temporal Difference Learning		Обучение с учётом временных различий (обучение с учетом временной разницы, обучение временной разницы)
+Deep Q-Learning				Глубокое Q-Обучение
+Greedy Policy				Жадная Политика
+policy-based training			обучение на основе политики
+state-value function			функция ценности состояния
+action-value function			функция ценности действия
+state-action values			???
+value					ценность (значение) стр. 75
+Temporal Difference Learning (TD)	Обучение с учетом временных различий
+return					доходность (означает суммарное дисконтированное вознаграждение, начиная с текущего временного шага.)
+estimated return			оцененную доходность
+Mid-way Recap				Промежуточный итог
+Mid-way Quiz				Промежуточный тест
+recap					Обзор
+off-policy				вне политики
+on-policy				в соответсвии с политикой
+Off-on policy				вне политики
+Link value policy			Связь ценности и политики
+immediate reward			непосредственное вознаграждение
+Thumbnail				Миниатюра
+Objectives				Задачи
+Try it out!				Попробуйте!
+prediction(s)				прогноз(ы)
 
 
 -----
