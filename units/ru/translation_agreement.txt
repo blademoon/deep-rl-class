@@ -26,72 +26,98 @@
 2. Аргументируйте свою позицию другими источниками.
 
 Глоссарий:
-Unit					Блок (Не раздел!)
-section(s)				Раздел
-Deep Reinforcement Learning		глубокое обучение с подкреплением
-Bonus Unit				Бонусный блок
-Summary					Краткое содержание (раздела или главы)
-Hands-on				Практическая работа
-Quiz					Контрольная работа
-assignments                         заданий
-Conclusion				Заключение
-Additional Readings			Дополнительные материалы
-Temporal Difference Learning		Метод временных различий
-push and load models			отправки и загрузки моделей
-Huggy					Хагги
-environment				среда
-Markov property				Марковское свойство
-Action Space				Пространство действий.
-cumulative reward			Кумулятивное вознаграждение
-immediate reward			Текущее вознаграждение
-exploration-exploitation trade-off	компромисс между исследованием и использованием
-leaderboard				таблица результатов
-Prerequisites				Предварительные условия
-Proximal Policy Optimization		Проксимальная оптимизация политики
-Value-Based Methods			методы основанные на ценности (действий)
-TODO					НЕОБХОДИМО СДЕЛАТЬ
-Solution				Решение
-Evaluate				Оценка
-agent performance			качество агента
-additional challenges			дополнительные задачи
-Solution				Решение
-Joint motors				суставные двигатели
-tutorials				обучающие материалы
-Q-Learning				Q-Обучение
-Temporal Difference Learning		Обучение с учётом временных различий (обучение с учетом временной разницы, обучение временной разницы)
-Deep Q-Learning				Глубокое Q-Обучение
-Greedy Policy				Жадная Политика
-policy-based training			обучение на основе политики
-state-value function			функция ценности состояния
-action-value function			функция ценности действия
-state-action values			???
-value					ценность (значение) стр. 75
-Temporal Difference Learning (TD)	Обучение с учетом временных различий
-return					доходность (означает суммарное дисконтированное вознаграждение, начиная с текущего временного шага.)
-estimated return			оцененную доходность
-Mid-way Recap				Промежуточный итог
-Mid-way Quiz				Промежуточный тест
-recap					Обзор
-off-policy				вне политики
-on-policy				в соответсвии с политикой
-Off-on policy				вне политики
-Link value policy			Связь ценности и политики
-immediate reward			непосредственное вознаграждение
-Thumbnail				Миниатюра
-Objectives				Задачи
-Try it out!				Попробуйте!
-prediction(s)				прогноз(ы)
 
-ИЗ КУРСА NLP:
-correspondences  сопоставление
-Data collation  cопоставление данных
-model's performance  качество модели
-learning rate decay  затухание скорости обучения
-weight decay  затухание веса/весов
-perplexity  перплексия
-learning rate scheduler  планировщик скорости обучения
-dynamic padding  динамическое дополнение
-padding token дополняющий токен/токен дополнения (так как этот токен служит для выравнивания входных данных, чтобы из них потом можно было собрать матрицу после токенизации) 
+# Домен: Reinforcement learning (Обучение с подкреплением)
+Unit					                       Блок (Не раздел!)
+section(s)				                       Раздел
+Deep Reinforcement Learning		               глубокое обучение с подкреплением
+Bonus Unit				                       Бонусный блок
+Summary					                       Краткое содержание (раздела или главы)
+Hands-on				                       Практическая работа
+Quiz					                       Контрольная работа
+assignments                                    заданий
+Conclusion				                       Заключение
+Additional Readings			                   Дополнительные материалы
+Temporal Difference Learning		           Метод временных различий
+push and load models			               отправки и загрузки моделей
+Huggy					                       Хагги
+environment				                       среда
+Markov property				                   Марковское свойство
+Action Space				                   Пространство действий.
+cumulative reward			                   Кумулятивное вознаграждение
+immediate reward			                   Текущее вознаграждение
+exploration-exploitation trade-off	           компромисс между исследованием и использованием
+leaderboard				                       таблица результатов
+Prerequisites				                   Предварительные условия
+Proximal Policy Optimization		           Проксимальная оптимизация политики
+Value-Based Methods			                   методы основанные на ценности (действий)
+TODO					                       НЕОБХОДИМО СДЕЛАТЬ
+Solution				                       Решение
+Evaluate				                       Оценка
+agent performance			                   качество агента
+additional challenges			               дополнительные задачи
+Solution				                       Решение
+Joint motors				                   суставные двигатели
+tutorials				                       обучающие материалы
+Q-Learning				                       Q-Обучение
+Temporal Difference Learning		           Обучение с учётом временных различий (обучение с учетом временной разницы, обучение временной разницы)
+Temporal Difference Learning (TD)	           Обучение с учетом временных различий
+Deep Q-Learning				                   Глубокое Q-Обучение
+Greedy Policy				                   Жадная Политика
+policy-based training			               обучение на основе политики
+state-value function			               функция ценности состояния
+action-value function			               функция ценности действия
+state-action values			                   ???
+value					                       ценность (значение) стр. 75
+return					                       доходность (означает суммарное дисконтированное вознаграждение, начиная с текущего временного шага.)
+estimated return			                   оцененную доходность
+Mid-way Recap				                   Промежуточный итог
+Mid-way Quiz				                   Промежуточный тест
+recap					                       Обзор
+off-policy				                       вне политики
+on-policy				                       в соответсвии с политикой
+Off-on policy				                   вне политики (???)
+Link value policy			                   Связь ценности и политики
+immediate reward			                   непосредственное вознаграждение
+Thumbnail				                       Миниатюра
+Objectives				                       Задачи
+Try it out!				                       Попробуйте!
+prediction(s)				                   прогноз(ы)
+
+# Домен: NLP
+correspondences                                сопоставление
+Data collation                                 Сопоставление данных
+model's performance                            качество модели
+learning rate decay                            затухание скорости обучения
+weight decay                                   затухание веса/весов
+perplexity                                     перплексия
+learning rate scheduler                        планировщик скорости обучения
+padding -                                      дополнение (в контексте выравнивания примеров по длинне в процессе токенизации)
+dynamic padding                                динамическое дополнение
+padding token                                  дополняющий токен/токен дополнения (так как этот токен служит для выравнивания входных данных, чтобы из них потом можно было собрать батч (матрицу) после токенизации)
+Self-supervised learning                       обучение с самоконтролем
+summarization                                  суммаризация
+utility function                               служебная функция
+training artifacts                             результаты обучения
+labeled data                                   размеченные данные
+to tune                                        дообучить (в нашем случае перевод выбирается из контекста - fine-tuning - дообучение)
+stacking                                       стекирование
+crowdworkers                                   краудворкеры (https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D1%83%D0%B4%D1%81%D0%BE%D1%80%D1%81%D0%B8%D0%BD%D0%B3)
+summaries					                   резюме
+verbose summary				                   подробное резюме
+bilingual summarizer			               двухязыковой суммаризатор
+sanity check				                   проверка работоспособности
+reference summaries			                   опорные резюме (так как это по сути целевая переменная, на которую "операется" модель в процессе обучения)
+vanilla language modeling		               классическое языковое моделирование
+monolingual					                   монолигвистическими
+prefix prompt				                   префикс запроса
+reference summary				               эталонное резюме
+reference					                   эталонное
+baseline					                   базовый уровень 
+
+# Домен: Git/Github
+pull request - запрос на слияние
+push to hub - передать в хаб
 
 -----
 * - Обучение с подкреплением для реальных задач. Инженерный подход, Уиндер Ф. [ISBN 978-5-9775-6885-2] Стр. 87
